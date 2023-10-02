@@ -5,13 +5,13 @@ let cookieParser = require("cookie-parser");
 const bodyparser = require("body-parser");
 app.use(cookieParser());
 
-// const cors = require("cors");
-// app.use(
-//   cors({
-//     origin: "http://localhost:3000",
-//     credentials: true,
-//   })
-// );
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+    credentials: true,
+  })
+);
 
 app.use(bodyparser.urlencoded({ extended: false }));
 app.use(bodyparser.json());
