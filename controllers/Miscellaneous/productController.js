@@ -37,7 +37,7 @@ exports.addMiscProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 exports.getMiscAllProducts = catchAsyncErrors(async (req, res) => {
-  let productCount = await MiscProduct.countDocuments();
+  // let productCount = await MiscProduct.countDocuments();
 
   // All api features like search, filter and pagination
   let products = await MiscProduct.find();
@@ -45,7 +45,7 @@ exports.getMiscAllProducts = catchAsyncErrors(async (req, res) => {
   res.status(200).send({
     success: true,
     products,
-    productCount,
+    // productCount,
   });
 });
 

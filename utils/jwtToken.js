@@ -3,9 +3,7 @@ const jwtToken = (user, statusCode, res) => {
   let token = user.generateToken();
   let options = {
     httpOnly: true,
-    expires: new Date(
-      Date.now() + process.env.TOKEN_EXPIRE * 24 * 60 * 60 * 1000
-    ),
+    expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
   };
 
   res.status(statusCode).cookie("jwttoken", token, options).json({
