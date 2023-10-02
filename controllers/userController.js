@@ -43,11 +43,11 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
   res.cookie("siwatechtoken", null, {
     expires: new Date(Date.now()),
-    httpOnly: false,
+    httpOnly: true,
   });
 
   res.status(200).send({
-    success: false,
+    success: true,
     msg: "User Logged out successfully",
   });
 });
