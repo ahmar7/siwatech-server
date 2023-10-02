@@ -41,7 +41,7 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
 // Logout User
 
 exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
-  res.cookie("jwttoken", null, {
+  res.cookie("siwatechtoken", null, {
     expires: new Date(Date.now()),
     httpOnly: false,
   });
@@ -110,7 +110,7 @@ exports.updatePassword = catchAsyncErrors(async (req, res, next) => {
     { password: updatedHash },
     { new: true }
   );
-  res.cookie("jwttoken", null, {
+  res.cookie("siwatechtoken", null, {
     expires: new Date(Date.now()),
     httpOnly: true,
   });

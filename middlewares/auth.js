@@ -4,12 +4,12 @@ const ErrorHandler = require("../utils/errorHandler");
 const User = require("../models/userModel");
 
 exports.isAuthorizedUser = catchAsyncErrors(async (req, res, next) => {
-  const { jwttoken } = await req.cookies;
-  if (!jwttoken) {
+  const { siwatechtoken } = await req.cookies;
+  if (!siwatechtoken) {
     return next(new ErrorHandler("Please login to access this resource", 401));
   }
   let decodedData = jwt.verify(
-    jwttoken,
+    siwatechtoken,
     "AAMKMSKXMskjdcmsdkjcxsdxsxsxsxssdkcsdkjcnsk"
   );
 

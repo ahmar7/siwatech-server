@@ -6,7 +6,7 @@ const jwtToken = (user, statusCode, res) => {
     expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
   };
 
-  res.status(statusCode).cookie("jwttoken", token, options).json({
+  res.status(statusCode).cookie("siwatechtoken", token, options).json({
     success: true,
     token,
     user,
