@@ -8,7 +8,7 @@ app.use(cookieParser());
 const cors = require("cors");
 app.use(
   cors({
-    origin: "https://siwatec-gmbh.de/",
+    origin: process.env.CORS,
     credentials: true,
   })
 );
