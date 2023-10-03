@@ -13,16 +13,16 @@ let router = express.Router();
 router
   .route("/addSocial")
   .patch(
-    isAuthorizedUser,
-    authorizedRoles("admin"),
+    // isAuthorizedUser,
+    // authorizedRoles("admin"),
     singleUpload,
     addSocialLink
   );
 router
   .route("/addSocialFeature")
   .patch(
-    isAuthorizedUser,
-    authorizedRoles("admin"),
+    // isAuthorizedUser,
+    // authorizedRoles("admin"),
     singleUpload,
     addSocialFeature
   );

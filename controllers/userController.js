@@ -57,9 +57,9 @@ exports.logoutUser = catchAsyncErrors(async (req, res, next) => {
 exports.getProfile = catchAsyncErrors(async (req, res, next) => {
   let email = req.user.email;
   let user = await UserModel.findOne({ email });
-  console.log("user: ", user);
+  console.log("user: ", res.cookies());
 
-  console.log(user);
+  // console.log(user);
   return res.status(200).send({
     success: true,
     msg: "Done",

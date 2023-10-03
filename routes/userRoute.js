@@ -15,13 +15,24 @@ router.route("/register").post(RegisterUser);
 
 router.route("/login").post(loginUser);
 router.route("/logout").get(logoutUser);
-router.route("/auth").get(isAuthorizedUser, authorizedRoles("admin"));
 router
-  .route("/update-password")
-  .post(isAuthorizedUser, authorizedRoles("admin"), updatePassword);
+  .route("/auth")
+  .get
+  // isAuthorizedUser, authorizedRoles("admin")
+  ();
+router.route("/update-password").post(
+  // isAuthorizedUser, authorizedRoles("admin"),
+  updatePassword
+);
 router
   .route("/update-profile")
-  .get(isAuthorizedUser, authorizedRoles("admin"), getProfile)
-  .post(isAuthorizedUser, authorizedRoles("admin"), updateProfile);
+  .get(
+    // isAuthorizedUser, authorizedRoles("admin"),
+    getProfile
+  )
+  .post(
+    // isAuthorizedUser, authorizedRoles("admin"),
+    updateProfile
+  );
 
 module.exports = router;

@@ -12,17 +12,17 @@ const {
 } = require("../controllers/HomeController/belowBanners");
 
 let router = express.Router();
-router
-  .route("/addSlider")
-  .patch(
-    isAuthorizedUser,
-    authorizedRoles("admin"),
-    singleUpload,
-    addBannerSlider
-  );
-router
-  .route("/addBanners")
-  .patch(isAuthorizedUser, authorizedRoles("admin"), singleUpload, belowBanner);
+router.route("/addSlider").patch(
+  // isAuthorizedUser,
+  // authorizedRoles("admin"),
+  singleUpload,
+  addBannerSlider
+);
+router.route("/addBanners").patch(
+  // isAuthorizedUser, authorizedRoles("admin"),
+  singleUpload,
+  belowBanner
+);
 router.route("/getBanners").get(getSlider);
 router.route("/getBelowBanners").get(getBelowBanner);
 

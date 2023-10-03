@@ -15,10 +15,14 @@ const {
 let router = express.Router();
 router
   .route("/updateHomeAbout")
-  .patch(isAuthorizedUser, authorizedRoles("admin"), updateAbout);
+  .patch(
+    // isAuthorizedUser, authorizedRoles("admin"), 
+    updateAbout);
 router
   .route("/addInformation")
-  .patch(isAuthorizedUser, authorizedRoles("admin"), updateInformation);
+  .patch(
+    // isAuthorizedUser, authorizedRoles("admin"), 
+  updateInformation);
 router.route("/getHomeAbout").get(getHomeAbout);
 router.route("/getInformation").get(getInformation);
 

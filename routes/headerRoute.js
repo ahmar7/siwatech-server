@@ -8,9 +8,11 @@ const {
   postHeader,
 } = require("../controllers/headerController");
 let router = express.Router();
-router
-  .route("/addHeader")
-  .patch(isAuthorizedUser, authorizedRoles("admin"), singleUpload, addHeader);
+router.route("/addHeader").patch(
+  // isAuthorizedUser, authorizedRoles("admin"),
+  singleUpload,
+  addHeader
+);
 router.route("/getHeader").get(getHeader);
 // poduct controller route
 
